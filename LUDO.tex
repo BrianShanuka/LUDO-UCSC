@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+
+\title{Developing Ludo Game in C with New Strategies}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report talks about a C programming version of the popular board game Ludo, but with some awesome new features like mystery cells and blockades. We explain how the game works, how the classic and new features mix together, and the strategy behind playing the game. It's way more than just a normal game of Ludo—it's a lot more fun with all these strategic elements added.
+\end{abstract}
+
+\section{Introduction}
+Ludo is a fun board game that people of all ages love. The goal is to move your pieces around the board and get them all into the "home" area before anyone else. This report explains a C-based version of Ludo, following the basic rules but adding some exciting new elements to make it even more interesting.
+
+\section{How the Game Works}
+\subsection{Player Setup}
+You can have up to four players, each using a different colored piece: green, yellow, blue, and red. Each player has four pieces that start off in their "base."
+
+\subsection{Rolling the Dice}
+You roll a six-sided die to see how many spaces you can move your pieces. If you roll a 6, you get to move a piece out of the base and onto the board.
+
+\subsection{Moving Your Pieces}
+The pieces can move around the board in clockwise direction and also counter-clockwise direction. There are rules about moving, capturing other players' pieces, and winning the game.
+
+\subsubsection{Capturing Opponent's Pieces}
+If you land on a square where an opponent's piece is, you capture it and send it back to their base. This adds a cool risk-reward strategy to the game.
+
+\subsubsection{Getting to the Home Area}
+The first player to move all four of their pieces into the "home" area wins.
+
+\section{Cool New Features}
+\subsection{Mystery Cells}
+Mystery cells appear randomly on the board and can teleport any piece to another location. This makes the game super exciting and forces players to change their strategies on the fly.
+
+\subsection{Blockades}
+Blockades let you block other players from moving forward. They add a whole new level of strategy, because sometimes you have to figure out how to break through them or use them to your advantage.
+
+\section{How the Code Works}
+\subsection{Data Structures}
+The game uses structures in C to represent players, pieces, and the game board. This makes the code easier to understand and manage.
+
+\subsection{Functions That Make the Game Work}
+The game uses different functions to keep everything running smoothly. Some of the main ones are:
+\begin{itemize}
+    \item \texttt{initializePlayers}: Sets up the game by putting all pieces in their starting spots.
+    \item \texttt{rollDie}: Rolls the dice and returns a number between 1 and 6.
+    \item \texttt{movePiece}: Moves a piece according to the dice roll and the game rules, including any mystery cell effects.
+    \item \texttt{capturePiece}: Captures an opponent's piece and sends it back to the base.
+    \item \texttt{checkWin}: Checks if a player has moved all their pieces to the "home" area to win the game.
+    \item \texttt{applyMysteryCellEffect}: Handles what happens when a piece lands on a mystery cell, like teleporting or special movement rules.
+    \item \texttt{breakBlockade}: Helps break blockades so pieces can keep moving.
+\end{itemize}
+
+\subsection{Game Loop}
+The game loop is the main part of the program. It keeps everything going by making sure players take turns, roll the dice, move their pieces, capture opponents, check for wins, and deal with mystery cells and blockades.
+
+\section{Game Strategy and How to Win}
+Ludo isn’t just about luck—it’s also about making smart decisions. Here are some things to think about:
+
+\subsection{Risk vs Reward}
+You have to balance moving forward and staying safe from getting captured. This means every move counts!
+
+\subsection{Mastering Blockades}
+Using blockades can stop other players, but you also have to watch out for how they use them against you.
+
+\subsection{Dealing with Mystery Cells}
+Mystery cells add surprises that can totally change your plans. You have to be ready to adjust your strategy when these come into play.
+
+\subsection{Choosing Which Piece to Move}
+One of the hardest decisions is figuring out which piece to move based on what you rolled and how the game is going. You need to think ahead and choose wisely.
+
+\section{Conclusion and Future Ideas}
+This C program is a cool version of Ludo that adds new strategy elements to make the game more fun and challenging. Mystery cells and blockades bring a new level of excitement that keeps players on their toes.
+\end{document}
